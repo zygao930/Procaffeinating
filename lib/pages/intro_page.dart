@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {
@@ -19,7 +18,7 @@ class IntroPage extends StatelessWidget {
                 height: 300,
               ),
 
-              SizedBox(height: 48), // Removed const
+              SizedBox(height: 48),
 
               Text(
                 'But first, coffee.',
@@ -30,17 +29,40 @@ class IntroPage extends StatelessWidget {
                   fontSize: 30,
                 ),
               ),
-              SizedBox(height: 24), // Removed const
+
+              SizedBox(height: 24),
 
               Text(
                 'Procaffeinating: the tendency to not start anything until you\'ve had a coffee.',
                 style: TextStyle(
-                  //fontWeight: FontWeight.w100,
                   fontFamily: 'Lato',
                   color: Colors.grey[400],
-                  fontSize: 14, // Increased font size for better readability
+                  fontSize: 14,
                 ),
                 textAlign: TextAlign.center,
+              ),
+
+              const SizedBox(height: 48),
+
+              Center(
+                child: Container(
+                  constraints: BoxConstraints(minWidth: 300),
+                  decoration: BoxDecoration(
+                    color: Colors.brown[900],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.all(18),
+                  child: const Text(
+                    'Shop Now',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Cursive',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
             ],
           ),
