@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'home_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({Key? key});
@@ -44,7 +47,13 @@ class IntroPage extends StatelessWidget {
 
               const SizedBox(height: 48),
 
-              Center(
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                  ),
+                ),
                 child: Container(
                   constraints: BoxConstraints(minWidth: 300),
                   decoration: BoxDecoration(
