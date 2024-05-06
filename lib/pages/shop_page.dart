@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dart_andriod/models/coffee.dart';
+
+import '../components/coffee_title.dart';
 
 class ShopPage extends StatefulWidget {
   const ShopPage({super.key});
@@ -66,10 +69,25 @@ class _ShopPageState extends State<ShopPage> {
 
         Expanded(
           child: ListView.builder(
+              itemCount: 4,
+              scrollDirection: Axis.horizontal,
               itemBuilder: (context, index){
-                return CoffeeTile();
-              }
+                Coffee coffee = Coffee(
+                    name: 'Cappucino',
+                    price: '15',
+                    imagePath: 'lib/image/Cappucino.png',
+                    description: "Cappucino");
+                return CoffeeTile(
+                  coffee: coffee,
+                );
+              },
           ),
+        ),
+        const Padding(
+            padding: EdgeInsets.only(top: 25.0, left: 25, right: 25),
+            child: Divider(
+              color: Colors.white,
+            ),
         )
       ],
     );
